@@ -388,7 +388,7 @@ class Fragment(HasEnvironment):
         """
         assert self._building, "Can only call setattr_result() during build_fragment()"
         assert name.isidentifier(), ("Result channel name must be a valid "
-                                     "Python identifier")
+                                     "Python identifier, not '{}'".format(name))
         assert not hasattr(self, name), "Field '{}' already exists".format(name)
 
         path = "/".join(self._fragment_path + [name])
